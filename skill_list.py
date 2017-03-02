@@ -22,3 +22,8 @@ for k in range(3):
   y_train = y_folds
   y_test = y_train.pop(k)
   y_train = np.concatenate(y_train)
+
+# convet the num string to a num list
+nums = '1 2 3 4 5'
+data = map(int, nums.split())
+>>> data = [1, 2, 3, 4, 5]
