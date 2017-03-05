@@ -42,5 +42,11 @@ import operator
 d = sorted(d.iteritems(), key=operator.itemgetter(0), reverse=True)
 # by value
 d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
-
 # 返回的是排序好的list,每项为一个元祖(key, value)
+
+# 求一个行向量与一个矩阵各行的欧氏距离
+dataSetSize = dataSet.shape[0]
+diffMat = np.tile(inX, (dataSetSize, 1)) - dataSet
+sqDiffMat = diffMat ** 2
+sqDistance = sqDiffMat.sum(axis=1)
+distances = sqDistance ** 0.5
