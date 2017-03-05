@@ -42,3 +42,5 @@ import operator
 d = sorted(d.iteritems(), key=operator.itemgetter(0), reverse=True)
 # by value
 d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
+
+# 返回的是排序好的list,每项为一个元祖(key, value)
