@@ -27,3 +27,18 @@ for k in range(3):
 nums = '1 2 3 4 5'
 data = map(int, nums.split())
 >>> data = [1, 2, 3, 4, 5]
+
+
+# sort the dict by key or by value, reverse=True means sort descending, or not.
+# by key
+d = sorted(d.items(), key=lambda item: item[0], reverse=True)
+
+# by value
+d = sorted(d.items(), key=lambda item: item[1], reverse=True)
+
+# another method
+import operator
+# by key
+d = sorted(d.iteritems(), key=operator.itemgetter(0), reverse=True)
+# by value
+d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
