@@ -1,3 +1,4 @@
+#encoding:utf-8
 # with a total word list and the list contains articles composed by word and count
 # to build a matrix by row is the aritcle and column is the word
 
@@ -50,3 +51,19 @@ diffMat = np.tile(inX, (dataSetSize, 1)) - dataSet
 sqDiffMat = diffMat ** 2
 sqDistance = sqDiffMat.sum(axis=1)
 distances = sqDistance ** 0.5
+
+
+# 根据轨迹序列画轨迹图
+from PIL import Image
+from PIL import ImageDraw
+
+def draw(points):
+  im = Image.fromarray(np.zeros((64, 64)))
+  draw = ImageDraw.Draw(im)
+  for i in xrange(0, points.shape[0]-1):
+    draw.line((tuple(points[i+1]), tuple(points[i])), fill=255)
+  # 显示图片
+  im.convert('RGB').show()
+  # 保存图片
+  im.convert('RGB').save('img.jpg', 'JPEG') # save时，im必须先convert
+  
