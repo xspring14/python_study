@@ -73,3 +73,7 @@ def draw(points):
 a = range(10)
 a[:-(k + 1):-1]
 # 若k=5, 返回的为[9, 8, 7, 6, 5]
+
+# 关于np.nonzero(), 放回bool为True的index
+# a 为np.array时，np.nonzero(a[0, :] == var)[0]
+# a 为np.mat时，np.nonzeros(a[0, :] == var)[1]
