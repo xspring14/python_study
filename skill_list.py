@@ -67,3 +67,9 @@ def draw(points):
   # 保存图片
   im.convert('RGB').save('img.jpg', 'JPEG') # save时，im必须先convert
   
+  
+
+# 取列表的倒数k个元素,并倒序返回
+a = range(10)
+a[:-(k + 1):-1]
+# 若k=5, 返回的为[9, 8, 7, 6, 5]
